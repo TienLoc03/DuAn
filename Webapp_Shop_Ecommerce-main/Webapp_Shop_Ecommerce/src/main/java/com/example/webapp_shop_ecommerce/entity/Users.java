@@ -38,5 +38,4 @@ public class Users extends BaseEntity {
     @Column(name = "password")
     private String password;
 
-
 }

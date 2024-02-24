@@ -26,8 +26,6 @@ public class SizeController {
     @Autowired
     private SizeServiceImpl SizeService;
 
-
-
     @GetMapping
     public ResponseEntity<?> findAll(
             @RequestParam(value = "page", defaultValue = "-1") Integer page,
