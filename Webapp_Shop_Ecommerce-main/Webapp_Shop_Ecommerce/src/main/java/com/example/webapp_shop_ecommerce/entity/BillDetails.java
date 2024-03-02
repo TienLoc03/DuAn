@@ -1,10 +1,6 @@
     package com.example.webapp_shop_ecommerce.entity;
 
-    import jakarta.persistence.Column;
-    import jakarta.persistence.Entity;
-    import jakarta.persistence.JoinColumn;
-    import jakarta.persistence.ManyToOne;
-    import jakarta.persistence.Table;
+    import jakarta.persistence.*;
     import lombok.AllArgsConstructor;
     import lombok.Builder;
     import lombok.Getter;
@@ -26,8 +22,9 @@
         @Column(name = "unit_price")
         private BigDecimal unitPrice;
 
+        @Enumerated(EnumType.STRING)
         @Column(name = "status")
-        private Integer status;
+        private BillStatus status;
 
         @ManyToOne
         @JoinColumn(name = "bill_id")

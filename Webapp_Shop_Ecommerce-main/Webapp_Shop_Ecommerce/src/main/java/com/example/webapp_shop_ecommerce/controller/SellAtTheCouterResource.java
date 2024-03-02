@@ -16,22 +16,4 @@ public class SellAtTheCouterResource {
     @Autowired
     private BillServiceImpl billService;
 
-
-    @PostMapping("create/bill")
-    public ResponseEntity<Bill> addBill(@RequestBody Bill billDTO) {
-        Bill bill = billService.addBill(billDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(bill);
-    }
-    @PutMapping("bills/{billId}/confirm-payment")
-    public ResponseEntity<Bill> confirmPayment(@PathVariable Long billId) {
-        Bill confirmedBill = billService.confirmPayment(billId);
-        return ResponseEntity.ok(confirmedBill);
-    }
-
-    @GetMapping("bills/{billId}/print")
-    public ResponseEntity<String> printBill(@PathVariable Long billId) {
-        String billPrint = billService.printBill(billId);
-        return ResponseEntity.ok(billPrint);
-    }
-
 }

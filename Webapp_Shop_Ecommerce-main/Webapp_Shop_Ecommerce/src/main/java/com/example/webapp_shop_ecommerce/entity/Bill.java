@@ -58,9 +58,7 @@ public class Bill extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Users user;
-
 }
